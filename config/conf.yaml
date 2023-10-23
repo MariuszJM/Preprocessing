@@ -1,14 +1,12 @@
 CHART_CATEGORY: "FED"
 TEST_CYCLE: "CCAR_2023"
-# Definicje scenariuszy: klucz to nazwa kategorii, wartość to słowo kluczowe w nazwie pliku
-SCENARIOS:
-  Historic: "historic"  # Przykład: jeśli "historic" znajduje się w nazwie pliku, kategoria SCENARIO to "Historic"
-  Internal Baseline: "baseline"
-  Severely Adverse: "adverse"
-
-# Definicje zakresów ekonomicznych: klucz to nazwa kategorii, wartość to słowo kluczowe w nazwie pliku
-ECONOMIC_SCOPES:
-  Domestic: "domestic"  # Przykład: jeśli "domestic" znajduje się w nazwie pliku, kategoria ECONOMIC SCOPE to "Domestic"
-  International: "international"
-
-# ... (inne elementy konfiguracji)
+FILE_NAME_MAPPING:
+    SCENARIOS:
+        Historic: "historic"
+        Internal Baseline: "baseline"
+        Severely Adverse: "adverse"
+    ECONOMIC_SCOPES:
+        Domestic: "domestic"
+        International: "international"
+VARIABLE_NUMBER_2_CAR_VARIABLE_NAME: # to potrzebowałbym z DB
+    153: "Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock"

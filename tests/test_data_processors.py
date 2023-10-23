@@ -2,9 +2,7 @@ from data_processor.data_processor import FedDataProcessor
 import pandas as pd
 import pytest
 from unittest.mock import patch
-from data_processor.data_processor import FedDataProcessor  # Upewnij się, że zaimportujesz odpowiedni moduł
-
-# Poniżej importujemy dane do mockowania
+from data_processor.data_processor import FedDataProcessor
 from mock_data import initial_data, renamed_columns_data, categorized_data, melted_data, merged_data, additional_columns_data, final_data
 
 

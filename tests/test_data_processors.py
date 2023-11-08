@@ -1,9 +1,8 @@
-from data_processor.data_processor import FedDataProcessor
 import pandas as pd
 import pytest
 from unittest.mock import patch
 from data_processor.data_processor import FedDataProcessor
-from mock_data import initial_data, renamed_columns_data, categorized_data, melted_data, merged_data, additional_columns_data, final_data
+from mock_data import initial_data, renamed_columns_data, data_with_economic_scope, melted_data, merged_data, additional_columns_data, final_data, mapped_scenario_data
 
 
 @pytest.fixture
@@ -19,22 +18,28 @@ def processor():
 
 class TestFedDataProcessor:
 
-    def test_rename_columns(self, processor):
+    def test_rename_date(self, processor):
         processor.data = initial_data['data'].copy()
-        processor._rename_columns()
+        processor._rename_date()
 
         for name, df in processor.data.items():
             pd.testing.assert_frame_equal(df, renamed_columns_data[name], check_like=True, check_dtype=False)
 
-    def test_categorize_data_by_filename(self, processor):
+    def test_map_scenario(self, processor):
         processor.data = renamed_columns_data.copy()
-        processor._categorize_data_by_filename()
+        processor._map_scenario()
 
         for name, df in processor.data.items():
-            pd.testing.assert_frame_equal(df, categorized_data[name], check_like=True, check_dtype=False)
+            pd.testing.assert_frame_equal(df, mapped_scenario_data[name], check_like=True, check_dtype=False)
 
+    def test_add_economic_scope(self, processor):
+        processor.data = mapped_scenario_data.copy()
+        processor._add_economic_scope()
+
+        for name, df in processor.data.items():
+            pd.testing.assert_frame_equal(df, data_with_economic_scope[name], check_like=True, check_dtype=False)
     def test_melt_data(self, processor):
-        processor.data = categorized_data.copy()
+        processor.data = data_with_economic_scope.copy()
         processor._melt_data()
 
         for name, df in processor.data.items():

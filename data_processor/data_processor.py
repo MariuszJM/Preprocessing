@@ -70,8 +70,18 @@ class FedDataProcessor(AbstractDataProcessor):
 
     def _add_economic_scope(self):
         for name, data in self.data.items():
-            scope = self._extract_from_filename(name, 'ECONOMIC_SCOPES')
-            data['ECONOMIC SCOPE'] = scope
+            domestic_variables = set(self.mapping.get('Domestic', {}).values())
+            international_variables = set(self.mapping.get('International', {}).values())
+
+            def get_scope(variable):
+                if variable in international_variables:
+                    return 'International'
+                elif variable in domestic_variables:
+                    return 'Domestic'
+                else:
+                    return 'Unknown'
+
+            data['ECONOMIC SCOPE'] = data.apply(lambda row: get_scope(row['FED VARIABLE NAME']), axis=1)
 
     def _melt_data(self):
         self.data = {
@@ -79,12 +89,6 @@ class FedDataProcessor(AbstractDataProcessor):
                           var_name="FED VARIABLE NAME", value_name="INPUT VALUE")
             for name, df in self.data.items()
         }
-
-    def _extract_from_filename(self, filename, category):
-        for item, keyword in self.config['FILE_NAME_MAPPING'][category].items():
-            if keyword in filename:
-                return item
-        return 'Unknown'
 
     def _merge_dataframes(self):
         self.data = pd.concat(self.data.values(), ignore_index=True)

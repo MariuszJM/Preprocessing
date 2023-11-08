@@ -9,12 +9,6 @@ initial_data = {
             'Supervisory Internal Baseline': 'Internal Baseline',
             'Supervisory Severely Adverse': 'Severely Adverse'
         },
-        'FILE_NAME_MAPPING': {
-            'ECONOMIC_SCOPES': {
-                'Domestic': 'domestic',
-                'International': 'international'
-            }
-        },
         'VARIABLE_NUMBER_2_CAR_VARIABLE_NAME': {
             153: 'Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock'
         }

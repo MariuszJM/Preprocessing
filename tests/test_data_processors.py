@@ -32,18 +32,18 @@ class TestFedDataProcessor:
         for name, df in processor.data.items():
             pd.testing.assert_frame_equal(df, mapped_scenario_data[name], check_like=True, check_dtype=False)
 
-    def test_add_economic_scope(self, processor):
+    def test_melt_data(self, processor):
         processor.data = mapped_scenario_data.copy()
+        processor._melt_data()
+        for name, df in processor.data.items():
+            pd.testing.assert_frame_equal(df, melted_data[name], check_like=True, check_dtype=False)
+
+    def test_add_economic_scope(self, processor):
+        processor.data = melted_data.copy()
         processor._add_economic_scope()
 
         for name, df in processor.data.items():
             pd.testing.assert_frame_equal(df, data_with_economic_scope[name], check_like=True, check_dtype=False)
-    def test_melt_data(self, processor):
-        processor.data = data_with_economic_scope.copy()
-        processor._melt_data()
-
-        for name, df in processor.data.items():
-            pd.testing.assert_frame_equal(df, melted_data[name], check_like=True, check_dtype=False)
 
     def test_merge_dataframes(self, processor):
         processor.data = melted_data.copy()

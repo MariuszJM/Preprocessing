@@ -52,8 +52,8 @@ class FedDataProcessor(AbstractDataProcessor):
     def _prepare_data(self):
         self._rename_date()
         self._map_scenario()
-        self._add_economic_scope()
         self._melt_data()
+        self._add_economic_scope()
         self._merge_dataframes()
         self._add_additional_columns()
         self._map_and_add_columns()
@@ -73,18 +73,18 @@ class FedDataProcessor(AbstractDataProcessor):
             scope = self._extract_from_filename(name, 'ECONOMIC_SCOPES')
             data['ECONOMIC SCOPE'] = scope
 
+    def _melt_data(self):
+        self.data = {
+            name: pd.melt(df, id_vars=["AS OF DATE", 'SCENARIO'],
+                          var_name="FED VARIABLE NAME", value_name="INPUT VALUE")
+            for name, df in self.data.items()
+        }
+
     def _extract_from_filename(self, filename, category):
         for item, keyword in self.config['FILE_NAME_MAPPING'][category].items():
             if keyword in filename:
                 return item
         return 'Unknown'
-
-    def _melt_data(self):
-        self.data = {
-            name: pd.melt(df, id_vars=["AS OF DATE", 'ECONOMIC SCOPE', 'SCENARIO'],
-                          var_name="FED VARIABLE NAME", value_name="INPUT VALUE")
-            for name, df in self.data.items()
-        }
 
     def _merge_dataframes(self):
         self.data = pd.concat(self.data.values(), ignore_index=True)

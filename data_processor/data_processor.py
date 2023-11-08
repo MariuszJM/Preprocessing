@@ -64,8 +64,9 @@ class FedDataProcessor(AbstractDataProcessor):
 
     def _map_scenario(self):
         for name, data in self.data.items():
-            scenario = self._extract_from_filename(name, 'SCENARIOS')
-            data['SCENARIO'] = scenario
+            data['Scenario name'] = data['Scenario name'].map(
+                self.config.get('SCENARIOS_MAPPING'))
+            data.rename(columns={"Scenario name": "SCENARIO"}, inplace=True)
 
     def _add_economic_scope(self):
         for name, data in self.data.items():

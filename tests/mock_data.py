@@ -4,12 +4,12 @@ initial_data = {
     'config': {
         'CHART_CATEGORY': 'FED',
         'TEST_CYCLE': 'CCAR_2023',
+        'SCENARIOS_MAPPING': {
+            'Actual': 'Historic',
+            'Supervisory Internal Baseline': 'Internal Baseline',
+            'Supervisory Severely Adverse': 'Severely Adverse'
+        },
         'FILE_NAME_MAPPING': {
-            'SCENARIOS': {
-                'Historic': 'historic',
-                'Internal Baseline': 'baseline',
-                'Severely Adverse': 'adverse'
-            },
             'ECONOMIC_SCOPES': {
                 'Domestic': 'domestic',
                 'International': 'international'
@@ -21,14 +21,17 @@ initial_data = {
     },
     'data': {
         '2023-table_1b_historic_international.csv': pd.DataFrame({
+            'Scenario name': ['Actual'] * 8,
             'DATE': ['2021 Q1', '2021 Q2', '2021 Q3', '2021 Q4', '2022 Q1', '2022 Q2', '2022 Q3', '2022 Q4'],
             'Euro area real GDP growth': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         }),
         '2023-table_2b_supervisory_baseline_international.csv': pd.DataFrame({
+            'Scenario name': ['Supervisory Internal Baseline'] * 8,
             'DATE': ['2022 Q4', '2023 Q1', '2023 Q2', '2023 Q3', '2023 Q4', '2024 Q1', '2024 Q2', '2024 Q3'],
             'Euro area real GDP growth': [0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
         }),
         '2023-table_3b_supervisory_severely_adverse_international.csv': pd.DataFrame({
+            'Scenario name': ['Supervisory Severely Adverse'] * 8,
             'DATE': ['2022 Q4', '2023 Q1', '2023 Q2', '2023 Q3', '2023 Q4', '2024 Q1', '2024 Q2', '2024 Q3'],
             'Euro area real GDP growth': [0.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
         })
@@ -48,14 +51,17 @@ initial_data = {
 
 renamed_columns_data = {
         '2023-table_1b_historic_international.csv': pd.DataFrame({
+            'Scenario name': ['Actual'] * 8,
             'AS OF DATE': ['2021 Q1', '2021 Q2', '2021 Q3', '2021 Q4', '2022 Q1', '2022 Q2', '2022 Q3', '2022 Q4'],
             'Euro area real GDP growth': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         }),
         '2023-table_2b_supervisory_baseline_international.csv': pd.DataFrame({
+            'Scenario name': ['Supervisory Internal Baseline'] * 8,
             'AS OF DATE': ['2022 Q4', '2023 Q1', '2023 Q2', '2023 Q3', '2023 Q4', '2024 Q1', '2024 Q2', '2024 Q3'],
             'Euro area real GDP growth': [0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
         }),
         '2023-table_3b_supervisory_severely_adverse_international.csv': pd.DataFrame({
+            'Scenario name': ['Supervisory Severely Adverse'] * 8,
             'AS OF DATE': ['2022 Q4', '2023 Q1', '2023 Q2', '2023 Q3', '2023 Q4', '2024 Q1', '2024 Q2', '2024 Q3'],
             'Euro area real GDP growth': [0.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]
         })

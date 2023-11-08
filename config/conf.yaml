@@ -1,12 +1,8 @@
 CHART_CATEGORY: "FED"
 TEST_CYCLE: "CCAR_2023"
-FILE_NAME_MAPPING:
-    SCENARIOS:
-        Historic: "historic"
-        Internal Baseline: "baseline"
-        Severely Adverse: "adverse"
-    ECONOMIC_SCOPES:
-        Domestic: "domestic"
-        International: "international"
+SCENARIOS_MAPPING:
+    Actual: 'Historic'
+    Supervisory Internal Baseline: 'Internal Baseline'
+    Supervisory Severely Adverse: 'Severely Adverse'
 VARIABLE_NUMBER_2_CAR_VARIABLE_NAME: # to potrzebowałbym z DB
     153: "Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock"

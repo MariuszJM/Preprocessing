@@ -1,4 +1,4 @@
-from data_processor.data_processor import FedDataProcessor
+from src.data_processor import FedDataProcessor
 
 
 def main():

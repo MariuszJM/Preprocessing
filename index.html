@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Preparation Interface</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <!-- Form for FED Data Submission -->
+    <h2>FED Data Submission</h2>
+    <input type="text" id="output_csv_fed" placeholder="Output CSV Path">
+    <input type="text" id="mapping_file" placeholder="Mapping File Path">
+    <input type="text" id="fed_csv_files" placeholder="FED CSV Files (comma-separated)">
+    <button onclick="prepareDataFED()">Submit FED Data</button>
+    <p id="message_fed"></p>
+
+    <!-- Form for Getting Test Cycles -->
+    <h2>Get Test Cycles</h2>
+    <button onclick="getTestCycles()">Get Test Cycles</button>
+    <div id="test_cycles"></div>
+
+    <!-- Form for Getting Existing Data -->
+    <h2>Get Existing Data</h2>
+    <button onclick="getExistingData()">Get Existing Data</button>
+    <div id="existing_data"></div>
+
+    <!-- Form for DB Data Submission -->
+    <h2>DB Data Submission</h2>
+    <textarea id="selected_test_cycles" placeholder="Enter selected test cycles and scenarios as JSON"></textarea>
+    <input type="text" id="output_csv_db" placeholder="Output CSV Path">
+    <button onclick="prepareDataDB()">Submit DB Data</button>
+    <p id="message_db"></p>
+
+    <script>
+        // Function to submit FED data
+        function prepareDataFED() {
+            var data = {
+                output_csv: $('#output_csv_fed').val(),
+                mapping_file: $('#mapping_file').val(),
+                fed_csv_files: $('#fed_csv_files').val().split(',')
+            };
+            $.post('/prepare-data-fed', JSON.stringify(data), function(response) {
+                $('#message_fed').text(response.message + ' With parameters: ' + JSON.stringify(data));
+            }, 'json').fail(function() {
+                $('#message_fed').text('Failed to process FED data.');
+            });
+        }
+
+        // Function to get test cycles
+        function getTestCycles() {
+            $.get('/get-test-cycles', function(response) {
+                $('#test_cycles').text(JSON.stringify(response));
+            }, 'json').fail(function() {
+                $('#test_cycles').text('Failed to get test cycles.');
+            });
+        }
+
+        // Function to get existing data
+        function getExistingData() {
+            $.get('/get-existing-data', function(response) {
+                $('#existing_data').text(JSON.stringify(response));
+            }, 'json').fail(function() {
+                $('#existing_data').text('Failed to get existing data.');
+            });
+        }
+
+        // Function to submit DB data
+        function prepareDataDB() {
+            var data = {
+                selected_test_cycles: JSON.parse($('#selected_test_cycles').val()),
+                output_csv: $('#output_csv_db').val()
+            };
+            $.post('/prepare-data-db', JSON.stringify(data), function(response) {
+                $('#message_db').text(response.message + ' With parameters: ' + JSON.stringify(data));
+            }, 'json').fail(function() {
+                $('#message_db').text('Failed to prepare data from DB.');
+            });
+        }
+    </script>
+
+</body>
+</html>

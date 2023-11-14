@@ -1,21 +1,8 @@
-from abc import ABC, abstractmethod
 import pandas as pd
 import yaml
 import os
 
-
-class AbstractDataProcessor(ABC):
-    """
-    Abstract class for data processing.
-    """
-
-    @abstractmethod
-    def process(self, *args, **kwargs):
-        pass
-
-    @abstractmethod
-    def save(self, processed_data, destination):
-        pass
+from src.data_processor_interface import AbstractDataProcessor
 
 
 class FedDataProcessor(AbstractDataProcessor):

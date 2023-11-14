@@ -1,0 +1,25 @@
+,AS OF DATE,ECONOMIC SCOPE,SCENARIO,FED VARIABLE NAME,CAR VARIABLE NAME,INPUT VALUE,CHART CATEGORY,TEST CYCLE,VARIABLE NUMBER
+0,2021 Q1,International,Historic,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",0.0,FED,CCAR_2023,153
+1,2021 Q2,International,Historic,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",0.0,FED,CCAR_2023,153
+2,2021 Q3,International,Historic,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",0.0,FED,CCAR_2023,153
+3,2021 Q4,International,Historic,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",0.0,FED,CCAR_2023,153
+4,2022 Q1,International,Historic,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",0.0,FED,CCAR_2023,153
+5,2022 Q2,International,Historic,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",0.0,FED,CCAR_2023,153
+6,2022 Q3,International,Historic,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",0.0,FED,CCAR_2023,153
+7,2022 Q4,International,Historic,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",0.0,FED,CCAR_2023,153
+8,2022 Q4,International,Internal Baseline,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",0.0,FED,CCAR_2023,153
+9,2023 Q1,International,Internal Baseline,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",1.0,FED,CCAR_2023,153
+10,2023 Q2,International,Internal Baseline,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",1.0,FED,CCAR_2023,153
+11,2023 Q3,International,Internal Baseline,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",1.0,FED,CCAR_2023,153
+12,2023 Q4,International,Internal Baseline,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",1.0,FED,CCAR_2023,153
+13,2024 Q1,International,Internal Baseline,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",1.0,FED,CCAR_2023,153
+14,2024 Q2,International,Internal Baseline,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",1.0,FED,CCAR_2023,153
+15,2024 Q3,International,Internal Baseline,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",1.0,FED,CCAR_2023,153
+16,2022 Q4,International,Severely Adverse,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",0.0,FED,CCAR_2023,153
+17,2023 Q1,International,Severely Adverse,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",2.0,FED,CCAR_2023,153
+18,2023 Q2,International,Severely Adverse,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",2.0,FED,CCAR_2023,153
+19,2023 Q3,International,Severely Adverse,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",2.0,FED,CCAR_2023,153
+20,2023 Q4,International,Severely Adverse,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",2.0,FED,CCAR_2023,153
+21,2024 Q1,International,Severely Adverse,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",2.0,FED,CCAR_2023,153
+22,2024 Q2,International,Severely Adverse,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",2.0,FED,CCAR_2023,153
+23,2024 Q3,International,Severely Adverse,Euro area real GDP growth,"Euro Zone - National Accounts: Real GDP, (bill. 2010 EUR, CADARSAAR), Ann. % Ch_Stock",2.0,FED,CCAR_2023,153

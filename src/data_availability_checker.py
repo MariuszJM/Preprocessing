@@ -18,10 +18,11 @@ def get_test_cycles_and_scenarios_from_file(output_file):
         return {}
 
 
-def get_test_cycles_and_scenarios_from_db():
-    """Return a mapping of test cycles to their respective scenarios from the database."""
-    # Logic to retrieve available test cycles and scenarios from the database
-    return {
-        "test_cycle1": ["scenario1", "scenario2"],
-        "test_cycle2": ["scenario3", "scenario4"]
-    }
+def get_available_test_cycles_and_scenarios_from_db():
+    test_cycles = read_available_test_cycles()
+    data_structure = {}
+    for test_cycle in test_cycles:
+        scenarios_df = get_scenario(test_cycle)
+        scenarios = scenarios_df['SCENARIO'].unique().tolist() if not scenarios_df.empty else []
+        data_structure[test_cycle] = scenarios
+    return data_structure

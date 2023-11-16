@@ -1,6 +1,6 @@
 import unittest
 
-from src.data_availability_checker import get_test_cycles_and_scenarios_from_file
+from src.utils import get_test_cycles_and_scenarios_from_file
 
 
 class TestGetDataFromCSV(unittest.TestCase):

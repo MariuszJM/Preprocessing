@@ -26,3 +26,39 @@ def get_available_test_cycles_and_scenarios_from_db():
         scenarios = scenarios_df['SCENARIO'].unique().tolist() if not scenarios_df.empty else []
         data_structure[test_cycle] = scenarios
     return data_structure
+
+
+import pandas as pd
+
+
+class DatabaseHandler:
+    def __init__(self, config_file):
+        self.data_creator = data_creator_sql(create_meta=False)
+        self.config_file = config_file
+        self.conn = self.data_creator.getConnection(self.config_file)
+        self.cursor = self.conn.cursor()
+
+    def get_query_template(self, num_q, var_list, scenario_list):
+        # Tutaj użyj kodu z funkcji 'get_data', zastępując odpowiednio zmienne
+        pass
+
+    def get_data(self, test_cycle, var_list, scenario_list):
+        # Tutaj użyj kodu z funkcji 'get_data'
+        pass
+
+    def read_available_test_cycles(self):
+        # Tutaj użyj kodu z funkcji 'read_available_test_cycles'
+        pass
+
+    def get_scenarios(self, test_cycle):
+        # Tutaj użyj kodu z funkcji 'get_scenarios'
+        pass
+
+    def get_available_test_cycles_and_scenarios_from_db(self):
+        # Tutaj użyj kodu z funkcji 'get_available_test_cycles_and_scenarios_from_db'
+        pass
+
+
+# Przykład użycia klasy
+db_handler = DatabaseHandler("path_to_config_file")
+test_cycles_and_scenarios = db_handler.get_available_test_cycles_and_scenarios_from_db()
